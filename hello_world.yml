@@ -12,3 +12,10 @@
       copy:
         content: "we are all good"
         dest: /tmp/ansible-test2
+    - name: Ansible delete files created
+      file:
+        path: /tmp/
+        state: absent
+      with_items:
+        - ansible-test1
+        - ansible-test2
