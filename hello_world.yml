@@ -4,4 +4,11 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
-
+    - name: Ansible create file if it doesn't exist example
+      file:
+        path: /tmp/ansible-test1
+        state: touch
+    - name: Ansible create file if it doesn't with some content
+      copy:
+        content: "we are all good"
+        dest: /tmp/ansible-test2
