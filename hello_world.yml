@@ -14,8 +14,8 @@
         dest: /tmp/ansible-test2
     - name: Ansible delete files created
       file:
-        path: /tmp/
+        path: '{{ item }}'
         state: absent
       with_items:
-        - ansible-test1
-        - ansible-test2
+        - /tmp/ansible-test1
+        - /tmp/ansible-test2
